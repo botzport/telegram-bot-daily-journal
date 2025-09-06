@@ -1,7 +1,7 @@
 import { cron } from "https://deno.land/x/deno_cron/cron.ts";
 import { InlineKeyboard } from "https://deno.land/x/grammy@v1.38.2/mod.ts";
 
-const IS_TEST_MODE = true;
+const IS_TEST_MODE = false;
 
 export const scheduleDailyReminder = ({ bot, users }) => {
   const cronSchedule = IS_TEST_MODE ? "* * * * *" : "0 * * * *"; // Every minute vs every hour
