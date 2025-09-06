@@ -12,8 +12,14 @@ export const registerHandlers = (bot: Bot) => {
   bot.command("start", (ctx) => ctx.reply("What's your name?"));
   bot.command("goals", (ctx) => ctx.reply("🎯 What is your definition for success today?"));
 
+  // Handle "Set Goals" button click
+  bot.callbackQuery("set_goals", (ctx) => {
+    ctx.answerCallbackQuery(); // Acknowledge the button click
+    ctx.reply("🎯 What is your definition for success today?");
+  });
+
   bot.on("message:text", (ctx) => {
     const userText = ctx.message.text;
-    ctx.reply(`Hello ${userText}`);
+    ctx.reply(`Your goal is: ${userText}`);
   });
 };
