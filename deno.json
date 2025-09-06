@@ -1,7 +1,17 @@
 {
   "tasks": {
     "start": "deno run --allow-net --allow-import --allow-read --allow-env main.ts",
-    "dev": "deno run --allow-net --allow-import --allow-read --allow-env --watch main.ts"
+    "dev": "deno run --allow-net --allow-import --allow-read --allow-env --watch main.ts",
+    "fmt": "deno fmt",
+    "fmt:check": "deno fmt --check"
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 100,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": false,
+    "proseWrap": "preserve"
   },
   "imports": {
     "@/": "./src/"
